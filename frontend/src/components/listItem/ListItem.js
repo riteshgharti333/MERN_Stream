@@ -9,6 +9,8 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
+import trailer from "../../video/yes.mp4";
+
 const ListItem = ({ index, item }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [movie, setMovie] = useState({});
@@ -41,7 +43,7 @@ const ListItem = ({ index, item }) => {
         <img src={movie?.imgSm} alt="" />
         {isHovered && (
           <>
-            <video src={movie?.trailer} autoPlay={true} loop></video>
+            <video src={trailer} autoPlay={true} loop></video>
 
             <div className="itemInfo">
               <div className="icons">
