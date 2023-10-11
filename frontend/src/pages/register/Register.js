@@ -4,6 +4,8 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./register.scss";
 import { Link } from "react-router-dom";
+import {BiSolidLock, BiSolidUser} from "react-icons/bi"
+import {IoMdMail} from "react-icons/io"
 
 export default function Register() {
   const [email, setEmail] = useState("");
@@ -15,19 +17,18 @@ export default function Register() {
   const passwordRef = useRef();
   const usernameRef = useRef();
 
-  const handleStart = () => {
-    setEmail(emailRef.current.value);
-  };
 
   const handleFinish = async (e) => {
     e.preventDefault();
     const usernameValue = usernameRef.current.value;
+    const emailValue = emailRef.current.value;
     const passwordValue = passwordRef.current.value;
     setUsername(usernameValue);
+    setEmail(emailValue);
     setPassword(passwordValue);
     try {
       await axios.post("auth/register", {
-        email,
+        email : emailValue,
         username: usernameValue,
         password: passwordValue,
       });
@@ -41,39 +42,39 @@ export default function Register() {
     <div className="register">
       <div className="top">
         <div className="wrapper">
-          <img
+          {/* <img
             className="logo"
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/2560px-Netflix_2015_logo.svg.png"
             alt=""
-          />
+          /> */}
           <Link to="/login">
             <button className="loginButton">Sign In</button>
           </Link>
         </div>
       </div>
-      <div className="container">
-        <h1>Unlimited movies, TV shows, and more.</h1>
-        <h2>Watch anywhere. Cancel anytime.</h2>
-        <p>
-          Ready to watch? Enter your email to create or restart your membership.
-        </p>
-        {!email ? (
-          <div className="input">
-            <input type="email" placeholder="email address" ref={emailRef} />
-            <button className="registerButton" onClick={handleStart}>
-              Get Started
-            </button>
-          </div>
-        ) : (
           <form className="input">
-            <input type="text" placeholder="username" ref={usernameRef} />
-            <input type="password" placeholder="password" ref={passwordRef} />
+          <h1>Sign Up</h1>
+            <div className="inputType">
+            <BiSolidUser className="inputIcon" /> 
+            <input type="text" placeholder="Username" ref={usernameRef} />
+            </div>
+            
+            <div className="inputType">
+              <IoMdMail className="inputIcon"  />
+            <input type="Email" placeholder="Email" ref={emailRef} />
+            </div>
+
+
+            <div className="inputType">
+             <BiSolidLock className="inputIcon"  />
+            <input type="password" placeholder="Password" ref={passwordRef} />
+            </div>
+
+
             <button className="registerButton" onClick={handleFinish}>
-              Start
+              Sign Up
             </button>
           </form>
-        )}
       </div>
-    </div>
   );
 }

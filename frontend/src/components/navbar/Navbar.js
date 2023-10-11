@@ -31,14 +31,8 @@ const Navbar = () => {
           <Link to="/movies" className="link">
             <span> Movies </span>
           </Link>
-
-          <span> New and Popular </span>
-          <span> My List </span>
         </div>
         <div className="right">
-          <Search className="icon" />
-          <span>KID</span>
-          <Notifications className="icon" />
           <img
             src="https://static.vecteezy.com/system/resources/previews/000/439/863/original/vector-users-icon.jpg"
             alt=""

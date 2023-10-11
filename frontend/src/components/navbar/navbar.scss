@@ -36,6 +36,11 @@
       span {
         margin-right: 20px;
         cursor: pointer;
+        text-transform: uppercase;
+        font-family: "Autour One";
+        color: black;
+        font-size: 30px;
+        font-weight: 600;
 
         @include tablet {
           display: none;

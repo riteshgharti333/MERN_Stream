@@ -21,69 +21,88 @@
         height: 40px;
       }
 
-      .loginButton {
-        background-color: rgb(55, 0, 255);
+      .loginButton{
+        font-size: 20px;
         border: none;
-        color: white;
-        border-radius: 5px;
-        padding: 5px 15px;
-        font-size: 16px;
-        font-weight: 500;
+        background: white;
+        padding: 10px 15px;
+        border-radius: 4px;
+        font-weight: 600;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
         cursor: pointer;
+      font-family: 'Gabarito', sans-serif;
+
+      &:hover{
+        background: rgb(207, 203, 203);
+      }
       }
     }
   }
-
-  .container {
-    width: 100%;
-    height: 100%;
+   
+  .input{
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: white;
+    padding: 60px;
+    gap: 20px;
+    border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 
-    h1 {
-      font-size: 50px;
+    h1{
+      font-family: 'Gabarito', sans-serif;
+      text-align: center;
+      font-size: 40px;
     }
 
-    h2 {
-      margin: 20px;
-    }
-
-    p {
-      font-size: 20px;
-    }
-
-    .input {
-      width: 50%;
-      background-color: white;
+    .inputType{
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      margin-top: 20px;
-      height: 50px;
-      border-radius: 5px;
+      justify-content: center; 
+      background: white;
+      border-radius: 10px;
+      padding: 10px 30px;
+
+      .inputIcon{
+        font-size: 30px;
+        margin-right: 10px;
+      }
 
       input{
-          flex: 9;
-          height: 100%;
-          border: none;
-          padding: 0 10px;
-      }
+        background: transparent;
+        border: none;
+        width: 100%;
+        font-size: 15px;
+        font-family: 'Gabarito', sans-serif;
+        &::placeholder{
+          color: black;
+          font-size: 20px;
+          font-family: 'Gabarito', sans-serif;
+        }
 
-      .registerButton{
-          flex: 3;
-          height: 100%;
-          background-color: red;
-          border: none;
-          color: white;
-          font-size: 22px;
-          cursor: pointer;
+        &:focus{
+          outline: none;
+        }
       }
     }
+
+
+  .registerButton{
+    font-size: 20px;
+    font-family: 'Gabarito', sans-serif;
+    border: none;
+    padding: 10px 0px;
+    border-radius: 4px;
+    font-weight: 600;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    cursor: pointer;
+
+    &:hover{
+      background: rgb(207, 203, 203);
+    }
+  }
+
   }
 }
